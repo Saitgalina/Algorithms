@@ -22,6 +22,26 @@
             RankSort(arr, rank);
         }
     }
+    public static void MyRankSort(int[] arr, int rank)
+    {
+        List<int>[] temp = new List<int>[10];
+        for (int i = 0; i < temp.Length; i++)
+            temp[i] = new List<int>();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int ost = (arr[i] / rank) % 10;
+            temp[ost].Add(arr[i]);
+        }
+        int index = 0;
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i].Count != 0)
+            {
+                temp[i].CopyTo(arr, index);
+                index += temp[i].Count;
+            }
+        }
+    }
     public static void RankSort(int[] arr, int rank)
     {
         int[] output = new int[arr.Length];

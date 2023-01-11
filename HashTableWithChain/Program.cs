@@ -70,6 +70,7 @@
             foreach (var item in cells)
                 if (item.Key?.Equals(key) ?? false)
                     return true;
+            
 
             return false;
         }

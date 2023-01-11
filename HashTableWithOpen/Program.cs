@@ -43,7 +43,7 @@
         private int GetHash(TKey key)
         {
             var hash = key.GetHashCode() % table.Length;
-            var er = Convert.ToInt32(key) / 2;
+            //var er = Convert.ToInt32(key) / 2;
             if (table[hash] == null)
                 return hash;
             if (!table[hash].Key.Equals(key))
